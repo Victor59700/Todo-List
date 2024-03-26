@@ -41,9 +41,10 @@ function updateListContent() {
     // Récupérer la date actuelle
     const currentDate = new Date();
 
-    // Récupérer les éléments de la date et de l'heure
+    // Récupérer les éléments de la date 
     const dateElement = document.getElementById('date');
     const listContentElement = document.getElementById('listContent');
+
 
     // Mettre à jour le contenu de la carte avec la date et l'heure actuelles
     dateElement.innerText = currentDate.toLocaleDateString();

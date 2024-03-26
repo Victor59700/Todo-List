@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Todo_List.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;700&display=swap">
     <script src="/Todo_List.js" defer></script>
     <title>Todo list</title>
 </head>
 <body>
     <div class="card-list">
-        <h2>Mes dernières listes</h2>
-        <p id="listContent">Vous n'avez pas <br> encore de listes</p>
-        <button class="button-card">Ajouter une liste</button>
+        <h2 class="card-list__heading">Mes dernières listes</h2>
+        <p id="listContent" class="card-list__content">Vous n'avez pas <br> encore de listes</p>
+        <button class="button-card card-list__button">Ajouter une liste</button>
     </div>
     <div class="card-date">
-        <h2>
-            <div>Nous sommes <span id="date"></span> il est</div>
-            <div><span id="heure"></span></div>
+        <h2 class="card-date__heading">
+            <div>Nous sommes <span id="date" class="card-date__date"></span> il est</div>
+            <div><span id="heure" class="card-date__time"></span></div>
         </h2> 
     </div>
+   <p class="natacha">Made with <span class="love-text">Love</span> by Natacha</p>
 </body>
 </html>

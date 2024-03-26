@@ -1,10 +1,24 @@
+
+:root{
+
+--whirt-and-gray-color:#e7e6e0;
+--whirt-color:#ffffff;
+--gray-color:#c0c0c0;
+--green-color:#4fda9c;
+--gray-two-color:#cccbc7;
+--red-color:red;
+}
+
+
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #e7e6e0;
+    background-color: var(--whirt-and-gray-color);
+    font-family: 'Overpass Mono';
 }
 
 .card-list {
@@ -12,42 +26,87 @@ body {
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--whirt-color);
     border-radius: 25px;
     width: 330px;
     height: 400px;
-    letter-spacing: 0.1em;
-}
+    
 
-.card-list p {
-    color: #c0c0c0;
-}
-
-.card-list .button-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4fda9c;
-    border: none;
-    border-radius: 10px;
-    height: 43px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 75px;
-    font-size: medium;
 }
 
 .card-date {
     display: flex;
     justify-content: center;
     margin-left: 10%;
-    letter-spacing: 0.1em;
+ 
+
 }
 
-.card-date #heure {
+.card-list__paragraph {
+    color: var(--gray-color);
+}    
+
+
+.card-list__button {
     display: flex;
     justify-content: center;
-    color: #cccbc7;
-    font-size: 202px;
+    align-items: center;
+    background-color: var(--green-color);
+    border: none;
+    border-radius: 10px;
+    height: 43px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 75px;
+
 }
 
+
+.card-date__time{
+    display: flex;
+    justify-content: center;
+    color: var(--gray-two-color);
+    font-size: 185px;    
+    animation: blink 2s infinite;
+
+    
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0; 
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+
+.card-list--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-date--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.natacha{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .love-text{
+    color:var(--red-color);
+    }
+
+    
+}
