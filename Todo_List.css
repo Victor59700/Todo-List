@@ -66,11 +66,13 @@ body {
     display: flex;
     justify-content: center;
     color: var(--gray-two-color);
-    font-size: 185px;    
-    animation: blink 2s infinite;
+    font-size: 155px;
+    animation: blink 2s infinite;}
 
-    
-}
+
+
+
+
 
 @keyframes blink {
     0% {
@@ -83,6 +85,8 @@ body {
         opacity: 0; 
     }
 }
+
+
 
 .card-list--centered {
     display: flex;
