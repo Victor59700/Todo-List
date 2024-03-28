@@ -1,26 +1,28 @@
+// Fonction pour mettre à jour la date et l'heure actuelles
 function updateDateTime() {
-    const now = new Date();
-    const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-    const months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    const today = new Date();
+    const daysOfWeek = [
+       'Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 
+    ];
+    const months = [
+        'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août',
+        'Septembre', 'Octobre', 'Novembre', 'Décembre',
+    ];
 
-    const dayOfWeek = days[now.getDay()];
-    const month = months[now.getMonth()];
-    const dayOfMonth = now.getDate();
-    const year = now.getFullYear();
+    const dayOfWeek = daysOfWeek[today.getDay()];
+    const dayOfMonth = today.getDate();
+    const month = months[today.getMonth()];
+    const year = today.getFullYear();
 
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const formattedDate = `${dayOfWeek} ${dayOfMonth} ${month} ${year}`;
+    document.getElementById('date').innerText = formattedDate;
 
-    const dateString = `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
+    const hours = today.getHours().toString().padStart(2, '0');
+    const minutes = today.getMinutes().toString().padStart(2, '0');
     const timeString = `${hours}:${minutes}`;
 
-    document.getElementById('date').innerText = dateString;
     document.getElementById('heure').innerText = timeString;
-
 }
-
-
-setInterval(updateDateTime,);
 
 // Appeler la fonction une fois au chargement de la page pour afficher l'heure actuelle
 updateDateTime();
@@ -40,17 +42,29 @@ document.addEventListener('DOMContentLoaded', function() {
 function updateListContent() {
     // Récupérer la date actuelle
     const currentDate = new Date();
+    
+    // Créer un tableau pour les jours de la semaine en français
+    const daysOfWeekFrench = [
+      'Dimanche',  'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 
+    ];
 
-    // Récupérer les éléments de la date 
-    const dateElement = document.getElementById('date');
+    // Créer un tableau pour les mois en français
+    const monthsFrench = [
+        'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+    ];
+
+    // Récupérer le jour de la semaine, le jour du mois, le mois et l'année
+    const dayOfWeek = daysOfWeekFrench[currentDate.getDay()];
+    const dayOfMonth = currentDate.getDate();
+    const month = monthsFrench[currentDate.getMonth()];
+    const year = currentDate.getFullYear();
+
+    // Formater la date
+    const formattedDate = `${dayOfWeek} ${dayOfMonth} ${month} ${year}`;
+
+    // Récupérer l'élément de la liste
     const listContentElement = document.getElementById('listContent');
 
-
-    // Mettre à jour le contenu de la carte avec la date et l'heure actuelles
-    dateElement.innerText = currentDate.toLocaleDateString();
-    listContentElement.innerText = currentDate.toLocaleDateString();
-  
-    
-
-
+    // Mettre à jour le contenu de la liste avec la date formatée
+    listContentElement.innerText = formattedDate;
 }
